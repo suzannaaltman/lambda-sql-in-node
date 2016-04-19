@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular + Express + SQL</title>
+    <script src="vendor/angular/angular.min.js"></script>
+    <script src="scripts/client.min.js"></script>
+    </head>
+  <body>
+    <div ng-controller="PersonController as person">
+      <label>Name:</label>
+      <input type="text" ng-model="person.name" />
+
+      <label>Address:</label>
+      <input type="text" ng-model="person.address" />
+
+      <button ng-click="person.sendData()">Submit</button>
+    </div>
+  </body>
+</html>
