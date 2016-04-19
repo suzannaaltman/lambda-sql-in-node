@@ -28,7 +28,6 @@ function initializeDB(){
       query.on('error', function() {
         console.log('Error creating schema!');
         process.exit(1);
-        done();
       });
     }
   });
