@@ -3,18 +3,45 @@
   <head>
     <meta charset="utf-8">
     <title>Node and SQL</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="views/styles.css"/>
     <script src="vendor/angular/angular.min.js"></script>
     <script src="scripts/client.min.js"></script>
   </head>
-  <body>
-    <div ng-controller="PersonController as person">
+  <header>
+    <h1>TELL US ABOUT YOU!</h1>
+    <h3> we'll make your info public! </h3>
+  </header>
+  <body ng-controller="PersonController as person">
+    <div class="col-md-4 inputs">
       <label>Name:</label>
-      <input type="text" ng-model="person.name" />
+      <input type="text" ng-model="person.name" class="form-control" /> <br />
 
       <label>Address:</label>
-      <input type="text" ng-model="person.address" />
+      <input type="text" ng-model="person.address" class="form-control"/> <br />
+
+      <label>City:</label>
+      <input type="text" ng-model="person.city" class="form-control"/> <br />
+
+      <label>State:</label>
+      <input type="text" ng-model="person.state" class="form-control"/> <br />
+
+      <label>Zip Code:</label>
+      <input type="text" ng-model="person.zip_code" class="form-control"/> <br />
 
       <button ng-click="person.sendData()">Submit!</button>
     </div>
+    <div class="row"></div>
+      <div class ="well col-md-3 col-sm-3" ng-repeat="person in person.people">
+        Name: {{person.name}} <br/>
+        Address: {{person.address}} <br/>
+        City: {{person.city}} <br/>
+        State: {{person.state}} <br/>
+        Zip: {{person.zip_code}} <br/>
+    </div>
+
+
+
+
   </body>
 </html>

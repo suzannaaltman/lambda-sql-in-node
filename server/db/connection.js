@@ -10,9 +10,13 @@ var initialize = function() {
     } else {
       // create initial schema
       var query = client.query('CREATE TABLE IF NOT EXISTS people (' +
-      'id serial PRIMARY KEY,' +
-      'name varchar(80) NOT NULL,' +
-      'address text)');
+        'id serial PRIMARY KEY,' +
+        'name varchar(255) NOT NULL,' +
+        'address varchar(255) NOT NULL,' +
+        'city varchar(100) NOT NULL,' +
+        'state varchar(3) NOT NULL,' +
+        'zip_code varchar(5) NOT NULL)'
+      );
 
       query.on('end', function(){
         console.log('Successfully created schema');
